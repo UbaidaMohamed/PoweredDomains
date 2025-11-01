@@ -1,0 +1,69 @@
+# Node
+node_modules/
+
+# Build output
+/dist/
+/build/
+/.next/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Vite cache
+/.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Env files
+.env
+.env.*.local
+.env.local
+
+# Coverage
+coverage/
+coverage-final.json
+.nyc_output/
+
+# Tests
+/jest-cache/
+
+# Misc
+*.log
+*.tmp
+
+# Optional: lockfiles are usually committed (package-lock.json / pnpm-lock.yaml)
+# If you prefer not to commit lockfiles, uncomment the next line
+# package-lock.json
+
+# Mac artifact
+.AppleDouble
+
+# Other caches
+.cache/
+
+# Screenshots, editor backups
+*.swo
+*.swp
+
+# Ignore build artifacts created by various tools
+dist-*/
+
+# Ignore local environment files
+.vite/deps/
+
+# Ignore coverage from VS Code Test Explorer
+.vscode-test/
