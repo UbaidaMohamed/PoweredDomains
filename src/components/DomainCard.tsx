@@ -17,7 +17,8 @@ const DomainCard: React.FC<DomainCardProps> = ({
   category,
   featured = false,
   buyNowUrl,
-  makeOfferUrl
+  makeOfferUrl,
+  sold = false,
 }) => {
   return (
     <div className={`bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow p-6 ${
