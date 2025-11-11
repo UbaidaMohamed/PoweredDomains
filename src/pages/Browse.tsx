@@ -20,10 +20,9 @@ const Browse: React.FC = () => {
     },
     {
       domain: 'GPTXtra.com',
-      price: '$9,500',
+      price: 'Sold',
       category: 'AI',
-      buyNowUrl: 'https://gptxtra.com',
-      makeOfferUrl: 'https://gptxtra.com'
+      sold: true
     },
     {
       domain: 'ProgramSeed.com',

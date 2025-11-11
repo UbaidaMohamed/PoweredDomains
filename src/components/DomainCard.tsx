@@ -8,6 +8,7 @@ interface DomainCardProps {
   featured?: boolean;
   buyNowUrl?: string;
   makeOfferUrl?: string;
+  sold?: boolean;
 }
 
 const DomainCard: React.FC<DomainCardProps> = ({
@@ -28,6 +29,21 @@ const DomainCard: React.FC<DomainCardProps> = ({
           <span className="text-sm font-medium text-yellow-600 ml-1">Featured</span>
         </div>
       )}
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center">
+          {featured && (
+            <div className="flex items-center mr-3">
+              <Star className="h-4 w-4 text-yellow-400 fill-current" />
+              <span className="text-sm font-medium text-yellow-600 ml-1">Featured</span>
+            </div>
+          )}
+        </div>
+        {sold ? (
+          <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-300 text-gray-700 text-sm font-semibold">
+            Sold
+          </span>
+        ) : null}
+      </div>
       
       <div className="mb-4">
         <h3 className="text-xl font-bold text-gray-900 mb-2">{domain}</h3>
@@ -37,33 +53,39 @@ const DomainCard: React.FC<DomainCardProps> = ({
       </div>
 
       <div className="mb-4">
-        <span className="text-2xl font-bold text-blue-600">{price}</span>
+        {sold ? (
+          <span className="text-2xl font-bold text-gray-700">Sold</span>
+        ) : (
+          <span className="text-2xl font-bold text-blue-600">{price}</span>
+        )}
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-2">
-        {buyNowUrl && (
-          <a
-            href={buyNowUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors flex items-center justify-center"
-          >
-            Buy Now
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </a>
-        )}
-        {makeOfferUrl && (
-          <a
-            href={makeOfferUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium hover:bg-gray-50 transition-colors flex items-center justify-center"
-          >
-            Make Offer
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </a>
-        )}
-      </div>
+      {!sold && (
+        <div className="flex flex-col sm:flex-row gap-2">
+          {buyNowUrl && (
+            <a
+              href={buyNowUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors flex items-center justify-center"
+            >
+              Buy Now
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          )}
+          {makeOfferUrl && (
+            <a
+              href={makeOfferUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium hover:bg-gray-50 transition-colors flex items-center justify-center"
+            >
+              Make Offer
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 };
