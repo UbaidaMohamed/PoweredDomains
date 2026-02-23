@@ -74,13 +74,3 @@ If images do not appear, run a hard refresh in the browser (Ctrl+F5) because bro
 
 - If Vite fails to start, ensure Node.js (>=16) and npm are installed and `node_modules` are present.
 - If a logo doesn't render, check `public/` for the expected filenames (`homepage-logo.png`, `title-logo.png`) and hard-refresh the browser.
-
-## Next steps / suggestions
-
-- Move domains to `src/data/domains.ts` for single-source-of-truth.
-- Replace PNG logos with SVG versions for crisp scaling on large screens.
-- Add SEO/meta per blog post and social sharing metadata.
-
-If you'd like, I can make any of the above improvements or run the dev server and verify a specific page for you.
-"# PoweredDomains" 
-"# PoweredDomains" 
